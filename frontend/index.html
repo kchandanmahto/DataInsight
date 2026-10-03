@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>DataInsight</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="container">
+            <h1>DataInsight</h1>
+            <p>Data Science Analysis & Visualization System</p>
+        </div>
+    </header>
+
+
+    <main class="container">
+
+        <!-- Upload Section -->
+        <section class="card upload-section">
+
+            <h2>Upload Dataset</h2>
+
+            <p class="description">
+                Upload a CSV or Excel dataset to start data analysis.
+            </p>
+
+            <div class="upload-box">
+
+                <input type="file" id="datasetFile" accept=".csv,.xlsx,.xls">
+
+                <button id="analyzeBtn">
+                    Analyze Dataset
+                </button>
+
+            </div>
+
+            <p id="fileName" class="file-name">
+                No file selected
+            </p>
+
+            <p id="statusMessage" class="status"></p>
+
+        </section>
+
+
+        <!-- Dataset Overview -->
+        <section id="overviewSection" class="card hidden">
+
+            <h2>Dataset Overview</h2>
+
+            <div class="stats-grid">
+
+                <div class="stat-card">
+                    <span>Rows</span>
+                    <strong id="rowsCount">0</strong>
+                </div>
+
+                <div class="stat-card">
+                    <span>Columns</span>
+                    <strong id="columnsCount">0</strong>
+                </div>
+
+                <div class="stat-card">
+                    <span>Duplicate Rows</span>
+                    <strong id="duplicateCount">0</strong>
+                </div>
+
+                <div class="stat-card">
+                    <span>Missing Values</span>
+                    <strong id="missingCount">0</strong>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Dataset Information -->
+        <section id="infoSection" class="card hidden">
+
+            <h2>Dataset Information</h2>
+
+            <div class="table-wrapper">
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>Column</th>
+                            <th>Data Type</th>
+                            <th>Missing Values</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="columnTableBody">
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+        <!-- Dataset Preview -->
+        <section id="previewSection" class="card hidden">
+
+            <h2>Dataset Preview</h2>
+
+            <div class="table-wrapper">
+
+                <table id="previewTable">
+
+                    <thead id="previewHead"></thead>
+
+                    <tbody id="previewBody"></tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+        <p>DataInsight © 2026</p>
+    </footer>
+
+
+    <script src="js/app.js"></script>
+
+</body>
+
+</html>
