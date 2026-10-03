@@ -1,0 +1,335 @@
+.dashboard-content {
+    padding: 35px;
+}
+
+
+/* Welcome */
+
+.welcome-card {
+    background: #111827;
+
+    color: white;
+
+    border-radius: 14px;
+
+    padding: 32px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 30px;
+
+    margin-bottom: 35px;
+}
+
+
+.welcome-label {
+    color: #93c5fd;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+}
+
+
+.welcome-card h2 {
+    font-size: 30px;
+
+    max-width: 600px;
+
+    margin:
+        10px 0 12px;
+}
+
+
+.welcome-card p {
+    color: #d1d5db;
+
+    max-width: 650px;
+
+    line-height: 1.6;
+}
+
+
+.primary-button {
+    background: var(--primary);
+
+    color: white;
+
+    padding:
+        12px 20px;
+
+    border-radius: 8px;
+
+    font-weight: 600;
+
+    white-space: nowrap;
+
+    transition: 0.2s;
+}
+
+
+.primary-button:hover {
+    background:
+        var(--primary-dark);
+}
+
+
+/* Section */
+
+.section-header {
+    margin-bottom: 18px;
+}
+
+
+.section-header h2 {
+    font-size: 20px;
+}
+
+
+.section-header p {
+    color: var(--muted);
+
+    font-size: 13px;
+
+    margin-top: 4px;
+}
+
+
+/* Overview */
+
+.overview-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 16px;
+
+    margin-bottom: 35px;
+}
+
+
+.overview-card {
+    background: white;
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 12px;
+
+    padding: 20px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+}
+
+
+.card-icon {
+    width: 45px;
+    height: 45px;
+
+    border-radius: 10px;
+
+    background: #eff6ff;
+
+    color: var(--primary);
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 20px;
+}
+
+
+.overview-card span {
+    display: block;
+
+    color: var(--muted);
+
+    font-size: 13px;
+
+    margin-bottom: 5px;
+}
+
+
+.overview-card strong {
+    font-size: 23px;
+}
+
+
+.online-text {
+    color: #16a34a;
+}
+
+
+/* Modules */
+
+.module-heading {
+    margin-top: 10px;
+}
+
+
+.module-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 18px;
+}
+
+
+.module-card {
+    background: white;
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 12px;
+
+    padding: 24px;
+
+    transition:
+        transform 0.2s,
+        box-shadow 0.2s;
+}
+
+
+.module-card:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 10px 25px rgba(0, 0, 0, 0.07);
+}
+
+
+.module-icon {
+    width: 44px;
+    height: 44px;
+
+    border-radius: 10px;
+
+    background: #eff6ff;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 18px;
+
+    font-size: 20px;
+}
+
+
+.module-card h3 {
+    font-size: 17px;
+
+    margin-bottom: 8px;
+}
+
+
+.module-card p {
+    color: var(--muted);
+
+    font-size: 13px;
+
+    line-height: 1.5;
+
+    min-height: 40px;
+}
+
+
+.module-card span {
+    display: inline-block;
+
+    margin-top: 15px;
+
+    color: var(--primary);
+
+    font-size: 13px;
+
+    font-weight: 600;
+}
+
+
+/* Footer */
+
+.footer {
+    border-top:
+        1px solid var(--border);
+
+    padding:
+        20px 35px;
+
+    color: var(--muted);
+
+    font-size: 12px;
+
+    display: flex;
+
+    justify-content: space-between;
+}
+
+
+@media (max-width: 1000px) {
+
+    .overview-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .module-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+}
+
+
+@media (max-width: 650px) {
+
+    .dashboard-content {
+        padding: 20px;
+    }
+
+    .welcome-card {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        padding: 24px;
+    }
+
+    .welcome-card h2 {
+        font-size: 24px;
+    }
+
+    .overview-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .module-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer {
+        padding: 20px;
+
+        flex-direction: column;
+
+        gap: 8px;
+    }
+
+}

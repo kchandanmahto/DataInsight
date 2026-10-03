@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Geographic Analysis - DataInsight</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/geographic.css">
+</head>
+
+<body>
+
+    <div class="app-layout">
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+
+            <div class="brand">
+
+                <div class="brand-icon">
+                    DI
+                </div>
+
+                <div>
+                    <h2>DataInsight</h2>
+                    <span>Data Science Lab</span>
+                </div>
+
+            </div>
+
+
+            <nav class="sidebar-nav">
+
+                <div class="nav-title">
+                    MAIN
+                </div>
+
+
+                <a href="../index.html" class="nav-link">
+                    <span>⌂</span>
+                    Dashboard
+                </a>
+
+
+                <a href="dataset.html" class="nav-link">
+                    <span>▣</span>
+                    Dataset
+                </a>
+
+
+                <a href="cleaning.html" class="nav-link">
+                    <span>♢</span>
+                    Data Cleaning
+                </a>
+
+
+                <div class="nav-title">
+                    ANALYSIS
+                </div>
+
+
+                <a href="statistics.html" class="nav-link">
+                    <span>▤</span>
+                    Statistics
+                </a>
+
+
+                <a href="correlation.html" class="nav-link">
+                    <span>⌁</span>
+                    Correlation
+                </a>
+
+
+                <a href="regression.html" class="nav-link">
+                    <span>↗</span>
+                    Regression
+                </a>
+
+
+                <a href="visualization.html" class="nav-link">
+                    <span>▥</span>
+                    Visualization
+                </a>
+
+
+                <a href="geographic.html" class="nav-link active">
+                    <span>◎</span>
+                    Geographic
+                </a>
+
+            </nav>
+
+
+            <div class="sidebar-footer">
+                <span>DataInsight v1.0</span>
+                <span>Python • FastAPI</span>
+            </div>
+
+        </aside>
+
+
+        <!-- Main Content -->
+        <main class="main-content">
+
+
+            <!-- Header -->
+            <header class="top-header">
+
+                <div>
+
+                    <h1>Geographic Analysis</h1>
+
+                    <p>
+                        Analyze and visualize location-based data
+                    </p>
+
+                </div>
+
+
+                <div class="header-status">
+
+                    <span class="status-dot"></span>
+
+                    System Online
+
+                </div>
+
+            </header>
+
+
+            <section class="page-content">
+
+
+                <!-- Geographic Dataset -->
+                <div class="page-card">
+
+                    <div class="page-card-header">
+
+                        <div>
+
+                            <h2>Geographic Data</h2>
+
+                            <p>
+                                Configure geographic columns and
+                                visualize location-based information.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="geo-controls">
+
+
+                        <div class="control-group">
+
+                            <label for="geoDataset">
+                                Dataset
+                            </label>
+
+                            <select id="geoDataset">
+
+                                <option>
+                                    datainsight_sample_students.csv
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="control-group">
+
+                            <label for="latitudeColumn">
+                                Latitude Column
+                            </label>
+
+                            <select id="latitudeColumn">
+
+                                <option>
+                                    Latitude
+                                </option>
+
+                                <option>
+                                    latitude
+                                </option>
+
+                                <option>
+                                    Lat
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="control-group">
+
+                            <label for="longitudeColumn">
+                                Longitude Column
+                            </label>
+
+                            <select id="longitudeColumn">
+
+                                <option>
+                                    Longitude
+                                </option>
+
+                                <option>
+                                    longitude
+                                </option>
+
+                                <option>
+                                    Long
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <button class="primary-button" id="generateMapBtn">
+                            Generate Map
+                        </button>
+
+                    </div>
+
+
+                    <div class="geo-status" id="geoStatus">
+                        Ready for geographic analysis
+                    </div>
+
+                </div>
+
+
+                <!-- Geographic Summary -->
+                <div class="geo-summary-grid">
+
+
+                    <div class="geo-summary-card">
+
+                        <span>
+                            Locations
+                        </span>
+
+                        <strong>
+                            10
+                        </strong>
+
+                        <small>
+                            Geographic records
+                        </small>
+
+                    </div>
+
+
+                    <div class="geo-summary-card">
+
+                        <span>
+                            Latitude
+                        </span>
+
+                        <strong>
+                            23.3°
+                        </strong>
+
+                        <small>
+                            Average latitude
+                        </small>
+
+                    </div>
+
+
+                    <div class="geo-summary-card">
+
+                        <span>
+                            Longitude
+                        </span>
+
+                        <strong>
+                            85.3°
+                        </strong>
+
+                        <small>
+                            Average longitude
+                        </small>
+
+                    </div>
+
+
+                    <div class="geo-summary-card">
+
+                        <span>
+                            Coverage
+                        </span>
+
+                        <strong>
+                            100%
+                        </strong>
+
+                        <small>
+                            Valid coordinates
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Map -->
+                <div class="page-card map-card">
+
+                    <div class="page-card-header">
+
+                        <div>
+
+                            <h2>Geographic Map</h2>
+
+                            <p>
+                                Geographic distribution of dataset records.
+                            </p>
+
+                        </div>
+
+
+                        <span class="map-badge">
+                            Map Preview
+                        </span>
+
+                    </div>
+
+
+                    <div class="map-container">
+
+
+                        <!-- Decorative map grid -->
+                        <div class="map-grid">
+
+                            <div class="map-horizontal line-1"></div>
+                            <div class="map-horizontal line-2"></div>
+                            <div class="map-horizontal line-3"></div>
+                            <div class="map-horizontal line-4"></div>
+
+                            <div class="map-vertical line-v1"></div>
+                            <div class="map-vertical line-v2"></div>
+                            <div class="map-vertical line-v3"></div>
+                            <div class="map-vertical line-v4"></div>
+
+                        </div>
+
+
+                        <!-- Map Land Shape -->
+                        <div class="map-land">
+
+                            <div class="land-part land-one"></div>
+
+                            <div class="land-part land-two"></div>
+
+                            <div class="land-part land-three"></div>
+
+                        </div>
+
+
+                        <!-- Markers -->
+
+                        <div class="map-marker marker-1" title="Location 1">
+                            <span></span>
+                        </div>
+
+
+                        <div class="map-marker marker-2" title="Location 2">
+                            <span></span>
+                        </div>
+
+
+                        <div class="map-marker marker-3" title="Location 3">
+                            <span></span>
+                        </div>
+
+
+                        <div class="map-marker marker-4" title="Location 4">
+                            <span></span>
+                        </div>
+
+
+                        <div class="map-marker marker-5" title="Location 5">
+                            <span></span>
+                        </div>
+
+
+                        <div class="map-marker marker-6" title="Location 6">
+                            <span></span>
+                        </div>
+
+
+                        <!-- Map Labels -->
+
+                        <span class="map-label label-north">
+                            North
+                        </span>
+
+                        <span class="map-label label-south">
+                            South
+                        </span>
+
+                        <span class="map-label label-east">
+                            East
+                        </span>
+
+                        <span class="map-label label-west">
+                            West
+                        </span>
+
+
+                        <!-- Map Legend -->
+
+                        <div class="map-legend">
+
+                            <strong>
+                                Locations
+                            </strong>
+
+                            <span>
+                                ● Dataset Records
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Coordinate Table -->
+                <div class="page-card">
+
+                    <div class="page-card-header">
+
+                        <div>
+
+                            <h2>Location Data</h2>
+
+                            <p>
+                                Geographic coordinates available in the dataset.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="table-container">
+
+                        <table>
+
+                            <thead>
+
+                                <tr>
+
+                                    <th>
+                                        Location
+                                    </th>
+
+                                    <th>
+                                        Latitude
+                                    </th>
+
+                                    <th>
+                                        Longitude
+                                    </th>
+
+                                    <th>
+                                        Value
+                                    </th>
+
+                                    <th>
+                                        Status
+                                    </th>
+
+                                </tr>
+
+                            </thead>
+
+
+                            <tbody>
+
+
+                                <tr>
+
+                                    <td>
+                                        Location 1
+                                    </td>
+
+                                    <td>
+                                        23.3441
+                                    </td>
+
+                                    <td>
+                                        85.3096
+                                    </td>
+
+                                    <td>
+                                        85
+                                    </td>
+
+                                    <td>
+                                        <span class="valid-status">
+                                            Valid
+                                        </span>
+                                    </td>
+
+                                </tr>
+
+
+                                <tr>
+
+                                    <td>
+                                        Location 2
+                                    </td>
+
+                                    <td>
+                                        23.7957
+                                    </td>
+
+                                    <td>
+                                        86.4304
+                                    </td>
+
+                                    <td>
+                                        78
+                                    </td>
+
+                                    <td>
+                                        <span class="valid-status">
+                                            Valid
+                                        </span>
+                                    </td>
+
+                                </tr>
+
+
+                                <tr>
+
+                                    <td>
+                                        Location 3
+                                    </td>
+
+                                    <td>
+                                        24.8170
+                                    </td>
+
+                                    <td>
+                                        85.0000
+                                    </td>
+
+                                    <td>
+                                        92
+                                    </td>
+
+                                    <td>
+                                        <span class="valid-status">
+                                            Valid
+                                        </span>
+                                    </td>
+
+                                </tr>
+
+
+                                <tr>
+
+                                    <td>
+                                        Location 4
+                                    </td>
+
+                                    <td>
+                                        24.4820
+                                    </td>
+
+                                    <td>
+                                        86.6990
+                                    </td>
+
+                                    <td>
+                                        74
+                                    </td>
+
+                                    <td>
+                                        <span class="valid-status">
+                                            Valid
+                                        </span>
+                                    </td>
+
+                                </tr>
+
+
+                                <tr>
+
+                                    <td>
+                                        Location 5
+                                    </td>
+
+                                    <td>
+                                        23.6102
+                                    </td>
+
+                                    <td>
+                                        85.2799
+                                    </td>
+
+                                    <td>
+                                        81
+                                    </td>
+
+                                    <td>
+                                        <span class="valid-status">
+                                            Valid
+                                        </span>
+                                    </td>
+
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Geographic Insights -->
+                <div class="page-card">
+
+                    <div class="page-card-header">
+
+                        <div>
+
+                            <h2>
+                                Geographic Insights
+                            </h2>
+
+                            <p>
+                                Summary of geographic information.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="geo-insights">
+
+
+                        <div class="insight-item">
+
+                            <strong>
+                                Coordinate Validation
+                            </strong>
+
+                            <span>
+                                All detected coordinates are within
+                                valid latitude and longitude ranges.
+                            </span>
+
+                        </div>
+
+
+                        <div class="insight-item">
+
+                            <strong>
+                                Geographic Coverage
+                            </strong>
+
+                            <span>
+                                Dataset contains location information
+                                that can be represented geographically.
+                            </span>
+
+                        </div>
+
+
+                        <div class="insight-item">
+
+                            <strong>
+                                Visualization
+                            </strong>
+
+                            <span>
+                                Location records can be displayed
+                                as markers on a geographic map.
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Footer -->
+                <footer class="footer">
+
+                    <span>
+                        DataInsight — Data Science Analysis & Visualization System
+                    </span>
+
+                    <span>
+                        Data Science Lab Project
+                    </span>
+
+                </footer>
+
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <script src="../js/app.js"></script>
+    <script src="../js/geographic.js"></script>
+
+</body>
+
+</html>

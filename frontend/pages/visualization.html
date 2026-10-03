@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Visualization - DataInsight</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/visualization.css">
+</head>
+
+<body>
+
+    <div class="app-layout">
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+
+            <div class="brand">
+                <div class="brand-icon">DI</div>
+
+                <div>
+                    <h2>DataInsight</h2>
+                    <span>Data Science Lab</span>
+                </div>
+            </div>
+
+
+            <nav class="sidebar-nav">
+
+                <div class="nav-title">MAIN</div>
+
+                <a href="../index.html" class="nav-link">
+                    <span>⌂</span>
+                    Dashboard
+                </a>
+
+                <a href="dataset.html" class="nav-link">
+                    <span>▣</span>
+                    Dataset
+                </a>
+
+                <a href="cleaning.html" class="nav-link">
+                    <span>♢</span>
+                    Data Cleaning
+                </a>
+
+
+                <div class="nav-title">ANALYSIS</div>
+
+                <a href="statistics.html" class="nav-link">
+                    <span>▤</span>
+                    Statistics
+                </a>
+
+                <a href="correlation.html" class="nav-link">
+                    <span>⌁</span>
+                    Correlation
+                </a>
+
+                <a href="regression.html" class="nav-link">
+                    <span>↗</span>
+                    Regression
+                </a>
+
+                <a href="visualization.html" class="nav-link active">
+                    <span>▥</span>
+                    Visualization
+                </a>
+
+                <a href="geographic.html" class="nav-link">
+                    <span>◎</span>
+                    Geographic
+                </a>
+
+            </nav>
+
+
+            <div class="sidebar-footer">
+                <span>DataInsight v1.0</span>
+                <span>Python • FastAPI</span>
+            </div>
+
+        </aside>
+
+
+        <!-- Main Content -->
+        <main class="main-content">
+
+            <header class="top-header">
+
+                <div>
+                    <h1>Data Visualization</h1>
+                    <p>Explore datasets using statistical visualizations</p>
+                </div>
+
+                <div class="header-status">
+                    <span class="status-dot"></span>
+                    System Online
+                </div>
+
+            </header>
+
+
+            <section class="page-content">
+
+
+                <!-- Dataset Selection -->
+                <div class="page-card">
+
+                    <div class="page-card-header">
+
+                        <div>
+                            <h2>Visualization Workspace</h2>
+
+                            <p>
+                                Select a dataset and visualization type
+                                to explore your data.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="visualization-controls">
+
+                        <div class="control-group">
+
+                            <label for="datasetSelect">
+                                Dataset
+                            </label>
+
+                            <select id="datasetSelect">
+
+                                <option>
+                                    datainsight_sample_students.csv
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="control-group">
+
+                            <label for="variableSelect">
+                                Variable
+                            </label>
+
+                            <select id="variableSelect">
+
+                                <option>Marks</option>
+                                <option>Attendance</option>
+                                <option>Study_Hours</option>
+                                <option>Age</option>
+
+                            </select>
+
+                        </div>
+
+
+                        <button class="primary-button" id="generateChartBtn">
+                            Generate Chart
+                        </button>
+
+                    </div>
+
+
+                    <div class="visualization-status" id="visualizationStatus">
+                        Ready to generate visualization
+                    </div>
+
+                </div>
+
+
+                <!-- Visualization Types -->
+                <div class="page-card">
+
+                    <div class="page-card-header">
+
+                        <div>
+                            <h2>Visualization Types</h2>
+
+                            <p>
+                                Choose from different statistical
+                                visualization techniques.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="chart-type-grid">
+
+                        <button class="chart-type active" data-chart="histogram">
+                            <span class="chart-icon">▥</span>
+
+                            <strong>Histogram</strong>
+
+                            <small>
+                                Distribution of values
+                            </small>
+                        </button>
+
+
+                        <button class="chart-type" data-chart="normal">
+                            <span class="chart-icon">∿</span>
+
+                            <strong>Normal Curve</strong>
+
+                            <small>
+                                Normal distribution
+                            </small>
+                        </button>
+
+
+                        <button class="chart-type" data-chart="density">
+                            <span class="chart-icon">⌁</span>
+
+                            <strong>Density Plot</strong>
+
+                            <small>
+                                Data density distribution
+                            </small>
+                        </button>
+
+
+                        <button class="chart-type" data-chart="scatter">
+                            <span class="chart-icon">⠿</span>
+
+                            <strong>Scatter Plot</strong>
+
+                            <small>
+                                Variable relationship
+                            </small>
+                        </button>
+
+
+                        <button class="chart-type" data-chart="correlation">
+                            <span class="chart-icon">▦</span>
+
+                            <strong>Correlation Plot</strong>
+
+                            <small>
+                                Correlation matrix
+                            </small>
+                        </button>
+
+
+                        <button class="chart-type" data-chart="3d">
+                            <span class="chart-icon">◇</span>
+
+                            <strong>3D Plot</strong>
+
+                            <small>
+                                Three-dimensional data
+                            </small>
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Chart Area -->
+                <div class="page-card chart-card">
+
+                    <div class="page-card-header">
+
+                        <div>
+                            <h2 id="chartTitle">
+                                Histogram
+                            </h2>
+
+                            <p id="chartDescription">
+                                Distribution of Marks values.
+                            </p>
+                        </div>
+
+                        <span class="chart-badge">
+                            Preview
+                        </span>
+
+                    </div>
+
+
+                    <div class="chart-area">
+
+                        <!-- Y Axis -->
+                        <div class="chart-y-axis">
+                            Frequency
+                        </div>
+
+
+                        <!-- Chart -->
+                        <div class="chart-container">
+
+                            <div class="grid-line grid-1"></div>
+                            <div class="grid-line grid-2"></div>
+                            <div class="grid-line grid-3"></div>
+                            <div class="grid-line grid-4"></div>
+
+
+                            <!-- Histogram bars -->
+                            <div class="histogram">
+
+                                <div class="bar bar-1"></div>
+                                <div class="bar bar-2"></div>
+                                <div class="bar bar-3"></div>
+                                <div class="bar bar-4"></div>
+                                <div class="bar bar-5"></div>
+                                <div class="bar bar-6"></div>
+
+                            </div>
+
+
+                            <!-- Normal Curve -->
+                            <div class="normal-curve"></div>
+
+
+                            <!-- Scatter Points -->
+                            <div class="scatter-chart">
+
+                                <span class="chart-point p1"></span>
+                                <span class="chart-point p2"></span>
+                                <span class="chart-point p3"></span>
+                                <span class="chart-point p4"></span>
+                                <span class="chart-point p5"></span>
+                                <span class="chart-point p6"></span>
+                                <span class="chart-point p7"></span>
+                                <span class="chart-point p8"></span>
+
+                            </div>
+
+
+                            <span class="x-axis-label">
+                                Marks
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Chart Statistics -->
+                <div class="chart-stat-grid">
+
+                    <div class="chart-stat">
+
+                        <span>Mean</span>
+
+                        <strong>77.4</strong>
+
+                    </div>
+
+
+                    <div class="chart-stat">
+
+                        <span>Median</span>
+
+                        <strong>78.0</strong>
+
+                    </div>
+
+
+                    <div class="chart-stat">
+
+                        <span>Minimum</span>
+
+                        <strong>64</strong>
+
+                    </div>
+
+
+                    <div class="chart-stat">
+
+                        <span>Maximum</span>
+
+                        <strong>90</strong>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Visualization Information -->
+                <div class="page-card">
+
+                    <div class="page-card-header">
+
+                        <div>
+                            <h2>Visualization Information</h2>
+
+                            <p>
+                                Statistical purpose of the selected chart.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="visualization-info">
+
+                        <div class="info-item">
+
+                            <strong>Chart Type</strong>
+
+                            <span id="infoChartType">
+                                Histogram
+                            </span>
+
+                        </div>
+
+
+                        <div class="info-item">
+
+                            <strong>Variable</strong>
+
+                            <span id="infoVariable">
+                                Marks
+                            </span>
+
+                        </div>
+
+
+                        <div class="info-item">
+
+                            <strong>Observations</strong>
+
+                            <span>
+                                10
+                            </span>
+
+                        </div>
+
+
+                        <div class="info-item">
+
+                            <strong>Library</strong>
+
+                            <span>
+                                Matplotlib / Seaborn / Plotly
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Footer -->
+                <footer class="footer">
+
+                    <span>
+                        DataInsight — Data Science Analysis & Visualization System
+                    </span>
+
+                    <span>
+                        Data Science Lab Project
+                    </span>
+
+                </footer>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <script src="../js/app.js"></script>
+    <script src="../js/visualization.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,471 @@
+/* =================================
+   Correlation Page
+================================= */
+
+.correlation-controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding-top: 20px;
+}
+
+.selected-dataset {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.dataset-icon {
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 10px;
+
+    background: #eef2ff;
+    color: #4f46e5;
+
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.selected-dataset strong {
+    display: block;
+    color: #111827;
+    font-size: 15px;
+    margin-bottom: 4px;
+}
+
+.selected-dataset span {
+    display: block;
+    color: #64748b;
+    font-size: 13px;
+}
+
+.analysis-status {
+    margin-top: 16px;
+    padding: 10px 14px;
+
+    border-radius: 8px;
+
+    background: #f8fafc;
+    color: #64748b;
+
+    font-size: 13px;
+}
+
+
+/* =================================
+   Variable Selection
+================================= */
+
+.variable-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+
+    margin-top: 18px;
+}
+
+.variable-option {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 14px;
+
+    border: 1px solid #e5e7eb;
+    border-radius: 9px;
+
+    background: #ffffff;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+.variable-option:hover {
+    border-color: #c7d2fe;
+    background: #f8faff;
+}
+
+.variable-option input {
+    width: 16px;
+    height: 16px;
+
+    accent-color: #4f46e5;
+}
+
+.variable-option span {
+    color: #374151;
+    font-size: 13px;
+}
+
+
+/* =================================
+   Summary
+================================= */
+
+.correlation-summary-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+
+    margin: 20px 0;
+}
+
+.correlation-summary-card {
+    padding: 20px;
+
+    background: #ffffff;
+
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+}
+
+.correlation-summary-card span {
+    display: block;
+
+    color: #64748b;
+    font-size: 13px;
+
+    margin-bottom: 9px;
+}
+
+.correlation-summary-card strong {
+    display: block;
+
+    color: #111827;
+    font-size: 28px;
+
+    margin-bottom: 4px;
+}
+
+.correlation-summary-card small {
+    color: #94a3b8;
+    font-size: 12px;
+}
+
+
+/* =================================
+   Correlation Table
+================================= */
+
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+
+    margin-top: 18px;
+}
+
+.correlation-table {
+    width: 100%;
+    min-width: 650px;
+
+    border-collapse: collapse;
+}
+
+.correlation-table th,
+.correlation-table td {
+    padding: 15px;
+
+    text-align: center;
+
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.correlation-table th {
+    background: #f8fafc;
+
+    color: #475569;
+
+    font-size: 12px;
+}
+
+.correlation-table td {
+    color: #475569;
+
+    font-size: 13px;
+}
+
+.correlation-table td:first-child {
+    text-align: left;
+}
+
+.correlation-table td.diagonal {
+    background: #f1f5f9;
+    font-weight: 700;
+    color: #111827;
+}
+
+.correlation-table td.positive {
+    background: #eefbf3;
+    color: #15803d;
+    font-weight: 700;
+}
+
+
+/* =================================
+   Legend
+================================= */
+
+.correlation-legend {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+
+    margin-top: 18px;
+
+    color: #64748b;
+    font-size: 12px;
+}
+
+.correlation-legend div {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.legend-box {
+    width: 12px;
+    height: 12px;
+
+    border-radius: 3px;
+
+    display: inline-block;
+}
+
+.legend-box.strong {
+    background: #86efac;
+}
+
+.legend-box.moderate {
+    background: #fde68a;
+}
+
+.legend-box.weak {
+    background: #e2e8f0;
+}
+
+
+/* =================================
+   Relationship Analysis
+================================= */
+
+.relationship-list {
+    margin-top: 18px;
+}
+
+.relationship-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 16px 0;
+
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.relationship-item:last-child {
+    border-bottom: none;
+}
+
+.relationship-info strong {
+    display: block;
+
+    color: #111827;
+
+    font-size: 14px;
+
+    margin-bottom: 5px;
+}
+
+.relationship-info span {
+    color: #64748b;
+    font-size: 12px;
+}
+
+.correlation-value {
+    font-size: 17px;
+    font-weight: 700;
+    color: #475569;
+}
+
+.correlation-value.positive {
+    color: #15803d;
+}
+
+
+/* =================================
+   Scatter Plot Placeholder
+================================= */
+
+.scatter-placeholder {
+    display: flex;
+
+    min-height: 360px;
+
+    margin-top: 20px;
+
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+
+    background: #fafafa;
+
+    padding: 30px;
+}
+
+.scatter-axis-y {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+
+    color: #64748b;
+
+    font-size: 12px;
+
+    margin-right: 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.scatter-area {
+    position: relative;
+
+    flex: 1;
+
+    border-left: 1px solid #cbd5e1;
+    border-bottom: 1px solid #cbd5e1;
+}
+
+.x-label {
+    position: absolute;
+
+    bottom: -28px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    color: #64748b;
+
+    font-size: 12px;
+}
+
+
+/* Scatter points */
+
+.scatter-point {
+    position: absolute;
+
+    width: 10px;
+    height: 10px;
+
+    border-radius: 50%;
+
+    background: #4f46e5;
+}
+
+.point-1 {
+    left: 12%;
+    bottom: 18%;
+}
+
+.point-2 {
+    left: 22%;
+    bottom: 27%;
+}
+
+.point-3 {
+    left: 32%;
+    bottom: 36%;
+}
+
+.point-4 {
+    left: 42%;
+    bottom: 44%;
+}
+
+.point-5 {
+    left: 53%;
+    bottom: 54%;
+}
+
+.point-6 {
+    left: 64%;
+    bottom: 61%;
+}
+
+.point-7 {
+    left: 76%;
+    bottom: 72%;
+}
+
+.point-8 {
+    left: 87%;
+    bottom: 79%;
+}
+
+
+/* Trend line */
+
+.trend-line {
+    position: absolute;
+
+    width: 88%;
+    height: 2px;
+
+    left: 6%;
+    bottom: 48%;
+
+    background: #94a3b8;
+
+    transform: rotate(-25deg);
+    transform-origin: center;
+}
+
+
+/* =================================
+   Responsive
+================================= */
+
+@media (max-width: 1000px) {
+
+    .variable-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .correlation-summary-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+@media (max-width: 700px) {
+
+    .correlation-controls {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .variable-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .correlation-summary-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .correlation-legend {
+        flex-wrap: wrap;
+    }
+
+    .scatter-placeholder {
+        min-height: 280px;
+        padding: 20px;
+    }
+}

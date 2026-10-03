@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Regression - DataInsight</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/regression.css">
+</head>
+
+<body>
+
+    <div class="app-layout">
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+
+            <div class="brand">
+                <div class="brand-icon">DI</div>
+
+                <div>
+                    <h2>DataInsight</h2>
+                    <span>Data Science Lab</span>
+                </div>
+            </div>
+
+
+            <nav class="sidebar-nav">
+
+                <div class="nav-title">MAIN</div>
+
+                <a href="../index.html" class="nav-link">
+                    <span>⌂</span>
+                    Dashboard
+                </a>
+
+                <a href="dataset.html" class="nav-link">
+                    <span>▣</span>
+                    Dataset
+                </a>
+
+                <a href="cleaning.html" class="nav-link">
+                    <span>♢</span>
+                    Data Cleaning
+                </a>
+
+
+                <div class="nav-title">ANALYSIS</div>
+
+                <a href="statistics.html" class="nav-link">
+                    <span>▤</span>
+                    Statistics
+                </a>
+
+                <a href="correlation.html" class="nav-link">
+                    <span>⌁</span>
+                    Correlation
+                </a>
+
+                <a href="regression.html" class="nav-link active">
+                    <span>↗</span>
+                    Regression
+                </a>
+
+                <a href="visualization.html" class="nav-link">
+                    <span>▥</span>
+                    Visualization
+                </a>
+
+                <a href="geographic.html" class="nav-link">
+                    <span>◎</span>
+                    Geographic
+                </a>
+
+            </nav>
+
+
+            <div class="sidebar-footer">
+                <span>DataInsight v1.0</span>
+                <span>Python • FastAPI</span>
+            </div>
+
+        </aside>
+
+
+        <!-- Main Content -->
+        <main class="main-content">
+
+            <header class="top-header">
+
+                <div>
+                    <h1>Regression Analysis</h1>
+                    <p>Build and analyze statistical regression models</p>
+                </div>
+
+                <div class="header-status">
+                    <span class="status-dot"></span>
+                    System Online
+                </div>
+
+            </header>
+
+
+            <section class="page-content">
+
+
+                <!-- Dataset -->
+                <div class="page-card">
+
+                    <div class="page-card-header">
+
+                        <div>
+                            <h2>Regression Analysis</h2>
+
+                            <p>
+                                Select a dataset and regression technique
+                                to analyze relationships between variables.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="regression-dataset">
+
+                        <div class="selected-dataset">
+
+                            <div class="dataset-icon">
+                                CSV
+                            </div>
+
+                            <div>
+                                <strong>
+                                    datainsight_sample_students.csv
+                                </strong>
+
+                                <span>
+                                    10 rows • 6 columns
+                                </span>
+                            </div>
+
+                        </div>
+
+
+                        <div class="model-status">
+                            Ready
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Regression Model Selection -->
+                <div class="page-card">
+
+                    <div class="page-card-header">
+
+                        <div>
+                            <h2>Select Regression Model</h2>
+
+                            <p>
+                                Choose the statistical model required for analysis.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="model-grid">
+
+                        <label class="model-card">
+
+                            <input type="radio" name="regressionModel" value="linear" checked>
+
+                            <div class="model-icon">
+                                LR
+                            </div>
+
+                            <div class="model-content">
+
+                                <strong>Linear Regression</strong>
+
+                                <span>
+                                    Predict a continuous target variable
+                                    using one independent variable.
+                                </span>
+
+                            </div>
+
+                        </label>
+
+
+                        <label class="model-card">
+
+                            <input type="radio" name="regressionModel" value="logistic">
+
+                            <div class="model-icon">
+                                LOG
+                            </div>
+
+                            <div class="model-content">
+
+                                <strong>Logistic Regression</strong>
+
+                                <span>
+                                    Analyze binary classification
+                                    and probability-based outcomes.
+                                </span>
+
+                            </div>
+
+                        </label>
+
+
+                        <label class="model-card">
+
+                            <input type="radio" name="regressionModel" value="multiple">
+
+                            <div class="model-icon">
+                                MR
+                            </div>
+
+                            <div class="model-content">
+
+                                <strong>Multiple Regression</strong>
+
+                                <span>
+                                    Predict one target using multiple
+                                    independent variables.
+                                </span>
+
+                            </div>
+
+                        </label>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Variable Configuration -->
+                <div class="page-card">
+
+                    <div class="page-card-header">
+
+                        <div>
+                            <h2>Model Configuration</h2>
+
+                            <p>
+                                Select target and independent variables.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="configuration-grid">
+
+                        <div class="form-group">
+
+                            <label for="targetVariable">
+                                Target Variable
+                            </label>
+
+                            <select id="targetVariable">
+
+                                <option value="Marks">
+                                    Marks
+                                </option>
+
+                                <option value="Attendance">
+                                    Attendance
+                                </option>
+
+                                <option value="Study_Hours">
+                                    Study Hours
+                                </option>
+
+                                <option value="Age">
+                                    Age
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="independentVariable">
+                                Independent Variable
+                            </label>
+
+                            <select id="independentVariable">
+
+                                <option value="Study_Hours">
+                                    Study Hours
+                                </option>
+
+                                <option value="Attendance">
+                                    Attendance
+                                </option>
+
+                                <option value="Age">
+                                    Age
+                                </option>
+
+                                <option value="Marks">
+                                    Marks
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="multiple-variables">
+
+                        <label>
+                            <input type="checkbox" checked>
+                            Study Hours
+                        </label>
+
+                        <label>
+                            <input type="checkbox" checked>
+                            Attendance
+                        </label>
+
+                        <label>
+                            <input type="checkbox">
+                            Age
+                        </label>
+
+                    </div>
+
+
+                    <button class="primary-button" id="runRegressionBtn">
+                        Run Regression
+                    </button>
+
+
+                    <div class="regression-status" id="regressionStatus">
+                        Ready to build model
+                    </div>
+
+                </div>
+
+
+                <!-- Model Summary -->
+                <div class="regression-summary-grid">
+
+                    <div class="regression-summary-card">
+
+                        <span>R² Score</span>
+
+                        <strong id="rSquared">
+                            0.82
+                        </strong>
+
+                        <small>
+                            Model fit
+                        </small>
+
+                    </div>
+
+
+                    <div class="regression-summary-card">
+
+                        <span>Adjusted R²</span>
+
+                        <strong>
+                            0.79
+                        </strong>
+
+                        <small>
+                            Adjusted model fit
+                        </small>
+
+                    </div>
+
+
+                    <div class="regression-summary-card">
+
+                        <span>RMSE</span>
+
+                        <strong>
+                            4.82
+                        </strong>
+
+                        <small>
+                            Prediction error
+                        </small>
+
+                    </div>
+
+
+                    <div class="regression-summary-card">
+
+                        <span>Observations</span>
+
+                        <strong>
+                            10
+                        </strong>
+
+                        <small>
+                            Dataset records
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Regression Results -->
+                <div class="page-card">
+
+                    <div class="page-card-header">
+
+                        <div>
+                            <h2>Regression Results</h2>
+
+                            <p>
+                                Estimated coefficients and model statistics.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="table-container">
+
+                        <table>
+
+                            <thead>
+
+                                <tr>
+                                    <th>Variable</th>
+                                    <th>Coefficient</th>
+                                    <th>Std Error</th>
+                                    <th>t-Statistic</th>
+                                    <th>p-Value</th>
+                                    <th>Significance</th>
+                                </tr>
+
+                            </thead>
+
+
+                            <tbody>
+
+                                <tr>
+
+                                    <td>
+                                        <strong>Intercept</strong>
+                                    </td>
+
+                                    <td>35.214</td>
+
+                                    <td>5.182</td>
+
+                                    <td>6.796</td>
+
+                                    <td>0.0003</td>
+
+                                    <td>
+                                        <span class="significant">
+                                            Significant
+                                        </span>
+                                    </td>
+
+                                </tr>
+
+
+                                <tr>
+
+                                    <td>
+                                        <strong>Study Hours</strong>
+                                    </td>
+
+                                    <td>5.842</td>
+
+                                    <td>0.982</td>
+
+                                    <td>5.949</td>
+
+                                    <td>0.0008</td>
+
+                                    <td>
+                                        <span class="significant">
+                                            Significant
+                                        </span>
+                                    </td>
+
+                                </tr>
+
+
+                                <tr>
+
+                                    <td>
+                                        <strong>Attendance</strong>
+                                    </td>
+
+                                    <td>0.314</td>
+
+                                    <td>0.124</td>
+
+                                    <td>2.532</td>
+
+                                    <td>0.0392</td>
+
+                                    <td>
+                                        <span class="significant">
+                                            Significant
+                                        </span>
+                                    </td>
+
+                                </tr>
+
+
+                                <tr>
+
+                                    <td>
+                                        <strong>Age</strong>
+                                    </td>
+
+                                    <td>0.428</td>
+
+                                    <td>0.613</td>
+
+                                    <td>0.698</td>
+
+                                    <td>0.511</td>
+
+                                    <td>
+                                        <span class="not-significant">
+                                            Not Significant
+                                        </span>
+                                    </td>
+
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Equation -->
+                <div class="page-card">
+
+                    <div class="page-card-header">
+
+                        <div>
+                            <h2>Regression Equation</h2>
+
+                            <p>
+                                Mathematical representation of the fitted model.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="equation-box">
+
+                        <span class="equation-label">
+                            Predicted Marks =
+                        </span>
+
+                        <strong>
+                            35.214 + 5.842 × Study Hours
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Model Interpretation -->
+                <div class="page-card">
+
+                    <div class="page-card-header">
+
+                        <div>
+                            <h2>Model Interpretation</h2>
+
+                            <p>
+                                Summary of the regression model results.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="interpretation-grid">
+
+                        <div class="interpretation-item">
+
+                            <strong>Model Fit</strong>
+
+                            <span>
+                                The model explains a large portion of
+                                the variation in the target variable.
+                            </span>
+
+                        </div>
+
+
+                        <div class="interpretation-item">
+
+                            <strong>Important Variable</strong>
+
+                            <span>
+                                Study Hours shows a measurable relationship
+                                with the predicted outcome.
+                            </span>
+
+                        </div>
+
+
+                        <div class="interpretation-item">
+
+                            <strong>Prediction Error</strong>
+
+                            <span>
+                                RMSE represents the average magnitude of
+                                prediction error.
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Footer -->
+                <footer class="footer">
+
+                    <span>
+                        DataInsight — Data Science Analysis & Visualization System
+                    </span>
+
+                    <span>
+                        Data Science Lab Project
+                    </span>
+
+                </footer>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <script src="../js/app.js"></script>
+    <script src="../js/regression.js"></script>
+
+</body>
+
+</html>

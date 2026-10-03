@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Statistics - DataInsight</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/statistics.css">
+</head>
+
+<body>
+
+    <div class="app-layout">
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+
+            <div class="brand">
+                <div class="brand-icon">DI</div>
+                <div>
+                    <h2>DataInsight</h2>
+                    <span>Data Science Lab</span>
+                </div>
+            </div>
+
+            <nav class="sidebar-nav">
+
+                <div class="nav-title">MAIN</div>
+
+                <a href="../index.html" class="nav-link">
+                    <span>⌂</span>
+                    Dashboard
+                </a>
+
+                <a href="dataset.html" class="nav-link">
+                    <span>▣</span>
+                    Dataset
+                </a>
+
+                <a href="cleaning.html" class="nav-link">
+                    <span>♢</span>
+                    Data Cleaning
+                </a>
+
+                <div class="nav-title">ANALYSIS</div>
+
+                <a href="statistics.html" class="nav-link active">
+                    <span>▤</span>
+                    Statistics
+                </a>
+
+                <a href="correlation.html" class="nav-link">
+                    <span>⌁</span>
+                    Correlation
+                </a>
+
+                <a href="regression.html" class="nav-link">
+                    <span>↗</span>
+                    Regression
+                </a>
+
+                <a href="visualization.html" class="nav-link">
+                    <span>▥</span>
+                    Visualization
+                </a>
+
+                <a href="geographic.html" class="nav-link">
+                    <span>◎</span>
+                    Geographic
+                </a>
+
+            </nav>
+
+            <div class="sidebar-footer">
+                <span>DataInsight v1.0</span>
+                <span>Python • FastAPI</span>
+            </div>
+
+        </aside>
+
+
+        <!-- Main Content -->
+        <main class="main-content">
+
+            <!-- Header -->
+            <header class="top-header">
+
+                <div>
+                    <h1>Statistics</h1>
+                    <p>Descriptive statistical analysis of your dataset</p>
+                </div>
+
+                <div class="header-status">
+                    <span class="status-dot"></span>
+                    System Online
+                </div>
+
+            </header>
+
+
+            <!-- Page Content -->
+            <section class="page-content">
+
+                <!-- Dataset Selection -->
+                <div class="page-card">
+
+                    <div class="page-card-header">
+                        <div>
+                            <h2>Statistical Analysis</h2>
+                            <p>Select a dataset to calculate statistical measures.</p>
+                        </div>
+                    </div>
+
+                    <div class="statistics-dataset">
+
+                        <div class="dataset-info-box">
+
+                            <div class="dataset-icon">
+                                CSV
+                            </div>
+
+                            <div>
+                                <strong>datainsight_sample_students.csv</strong>
+                                <span>10 rows • 6 columns</span>
+                            </div>
+
+                        </div>
+
+                        <button class="primary-button" id="analyzeBtn">
+                            Calculate Statistics
+                        </button>
+
+                    </div>
+
+                    <div class="analysis-status" id="analysisStatus">
+                        Ready for analysis
+                    </div>
+
+                </div>
+
+
+                <!-- Summary Cards -->
+                <div class="stats-summary-grid">
+
+                    <div class="summary-card">
+                        <span class="summary-label">Numeric Columns</span>
+                        <strong id="numericColumns">4</strong>
+                        <small>Numerical variables</small>
+                    </div>
+
+                    <div class="summary-card">
+                        <span class="summary-label">Categorical Columns</span>
+                        <strong id="categoricalColumns">2</strong>
+                        <small>Categorical variables</small>
+                    </div>
+
+                    <div class="summary-card">
+                        <span class="summary-label">Observations</span>
+                        <strong id="observations">10</strong>
+                        <small>Total records</small>
+                    </div>
+
+                    <div class="summary-card">
+                        <span class="summary-label">Measures</span>
+                        <strong>9</strong>
+                        <small>Statistical measures</small>
+                    </div>
+
+                </div>
+
+
+                <!-- Numerical Statistics -->
+                <div class="page-card">
+
+                    <div class="page-card-header">
+                        <div>
+                            <h2>Descriptive Statistics</h2>
+                            <p>
+                                Mean, median, mode, variance, standard deviation,
+                                skewness and kurtosis.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="table-container">
+
+                        <table>
+
+                            <thead>
+                                <tr>
+                                    <th>Variable</th>
+                                    <th>Count</th>
+                                    <th>Mean</th>
+                                    <th>Median</th>
+                                    <th>Mode</th>
+                                    <th>Variance</th>
+                                    <th>Std Dev</th>
+                                    <th>Min</th>
+                                    <th>Max</th>
+                                    <th>Skewness</th>
+                                    <th>Kurtosis</th>
+                                </tr>
+                            </thead>
+
+                            <tbody id="statisticsTableBody">
+
+                                <tr>
+                                    <td><strong>Age</strong></td>
+                                    <td>10</td>
+                                    <td>20.8</td>
+                                    <td>20.5</td>
+                                    <td>20</td>
+                                    <td>2.84</td>
+                                    <td>1.69</td>
+                                    <td>18</td>
+                                    <td>24</td>
+                                    <td>0.32</td>
+                                    <td>-0.81</td>
+                                </tr>
+
+                                <tr>
+                                    <td><strong>Study_Hours</strong></td>
+                                    <td>10</td>
+                                    <td>4.9</td>
+                                    <td>5.0</td>
+                                    <td>5</td>
+                                    <td>1.88</td>
+                                    <td>1.37</td>
+                                    <td>3</td>
+                                    <td>7</td>
+                                    <td>0.08</td>
+                                    <td>-1.12</td>
+                                </tr>
+
+                                <tr>
+                                    <td><strong>Attendance</strong></td>
+                                    <td>10</td>
+                                    <td>84.2</td>
+                                    <td>85.5</td>
+                                    <td>85</td>
+                                    <td>28.18</td>
+                                    <td>5.31</td>
+                                    <td>75</td>
+                                    <td>92</td>
+                                    <td>-0.21</td>
+                                    <td>-0.73</td>
+                                </tr>
+
+                                <tr>
+                                    <td><strong>Marks</strong></td>
+                                    <td>10</td>
+                                    <td>77.4</td>
+                                    <td>78.0</td>
+                                    <td>80</td>
+                                    <td>67.38</td>
+                                    <td>8.21</td>
+                                    <td>64</td>
+                                    <td>90</td>
+                                    <td>-0.16</td>
+                                    <td>-0.87</td>
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Frequency Analysis -->
+                <div class="page-card">
+
+                    <div class="page-card-header">
+                        <div>
+                            <h2>Frequency Analysis</h2>
+                            <p>Frequency distribution of categorical variables.</p>
+                        </div>
+                    </div>
+
+                    <div class="frequency-grid">
+
+                        <div class="frequency-card">
+
+                            <h3>Department</h3>
+
+                            <div class="frequency-row">
+                                <span>CSE</span>
+                                <strong>5</strong>
+                            </div>
+
+                            <div class="frequency-row">
+                                <span>ECE</span>
+                                <strong>3</strong>
+                            </div>
+
+                            <div class="frequency-row">
+                                <span>ME</span>
+                                <strong>2</strong>
+                            </div>
+
+                        </div>
+
+
+                        <div class="frequency-card">
+
+                            <h3>Name</h3>
+
+                            <div class="frequency-row">
+                                <span>Unique Values</span>
+                                <strong>10</strong>
+                            </div>
+
+                            <div class="frequency-row">
+                                <span>Most Frequent</span>
+                                <strong>None</strong>
+                            </div>
+
+                            <div class="frequency-row">
+                                <span>Missing</span>
+                                <strong>0</strong>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Statistical Concepts -->
+                <div class="page-card">
+
+                    <div class="page-card-header">
+                        <div>
+                            <h2>Statistical Measures</h2>
+                            <p>Measures included in DataInsight analysis.</p>
+                        </div>
+                    </div>
+
+                    <div class="measure-grid">
+
+                        <div class="measure-item">
+                            <strong>Mean</strong>
+                            <span>Average value</span>
+                        </div>
+
+                        <div class="measure-item">
+                            <strong>Median</strong>
+                            <span>Middle value</span>
+                        </div>
+
+                        <div class="measure-item">
+                            <strong>Mode</strong>
+                            <span>Most frequent value</span>
+                        </div>
+
+                        <div class="measure-item">
+                            <strong>Variance</strong>
+                            <span>Data dispersion</span>
+                        </div>
+
+                        <div class="measure-item">
+                            <strong>Standard Deviation</strong>
+                            <span>Spread around mean</span>
+                        </div>
+
+                        <div class="measure-item">
+                            <strong>Skewness</strong>
+                            <span>Distribution asymmetry</span>
+                        </div>
+
+                        <div class="measure-item">
+                            <strong>Kurtosis</strong>
+                            <span>Distribution shape</span>
+                        </div>
+
+                        <div class="measure-item">
+                            <strong>Minimum / Maximum</strong>
+                            <span>Data range</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Footer -->
+                <footer class="footer">
+                    <span>DataInsight — Data Science Analysis & Visualization System</span>
+                    <span>Data Science Lab Project</span>
+                </footer>
+
+            </section>
+
+        </main>
+
+    </div>
+
+    <script src="../js/app.js"></script>
+    <script src="../js/statistics.js"></script>
+
+</body>
+
+</html>

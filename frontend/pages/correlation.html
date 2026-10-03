@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Correlation - DataInsight</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/correlation.css">
+</head>
+
+<body>
+
+    <div class="app-layout">
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+
+            <div class="brand">
+                <div class="brand-icon">DI</div>
+
+                <div>
+                    <h2>DataInsight</h2>
+                    <span>Data Science Lab</span>
+                </div>
+            </div>
+
+
+            <nav class="sidebar-nav">
+
+                <div class="nav-title">MAIN</div>
+
+                <a href="../index.html" class="nav-link">
+                    <span>⌂</span>
+                    Dashboard
+                </a>
+
+                <a href="dataset.html" class="nav-link">
+                    <span>▣</span>
+                    Dataset
+                </a>
+
+                <a href="cleaning.html" class="nav-link">
+                    <span>♢</span>
+                    Data Cleaning
+                </a>
+
+
+                <div class="nav-title">ANALYSIS</div>
+
+                <a href="statistics.html" class="nav-link">
+                    <span>▤</span>
+                    Statistics
+                </a>
+
+                <a href="correlation.html" class="nav-link active">
+                    <span>⌁</span>
+                    Correlation
+                </a>
+
+                <a href="regression.html" class="nav-link">
+                    <span>↗</span>
+                    Regression
+                </a>
+
+                <a href="visualization.html" class="nav-link">
+                    <span>▥</span>
+                    Visualization
+                </a>
+
+                <a href="geographic.html" class="nav-link">
+                    <span>◎</span>
+                    Geographic
+                </a>
+
+            </nav>
+
+
+            <div class="sidebar-footer">
+                <span>DataInsight v1.0</span>
+                <span>Python • FastAPI</span>
+            </div>
+
+        </aside>
+
+
+        <!-- Main Content -->
+        <main class="main-content">
+
+            <!-- Header -->
+            <header class="top-header">
+
+                <div>
+                    <h1>Correlation Analysis</h1>
+                    <p>Analyze relationships between numerical variables</p>
+                </div>
+
+                <div class="header-status">
+                    <span class="status-dot"></span>
+                    System Online
+                </div>
+
+            </header>
+
+
+            <section class="page-content">
+
+
+                <!-- Dataset Selection -->
+                <div class="page-card">
+
+                    <div class="page-card-header">
+
+                        <div>
+                            <h2>Correlation Analysis</h2>
+
+                            <p>
+                                Select numerical variables and analyze their
+                                relationship using correlation coefficients.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="correlation-controls">
+
+                        <div class="selected-dataset">
+
+                            <div class="dataset-icon">
+                                CSV
+                            </div>
+
+                            <div>
+                                <strong>
+                                    datainsight_sample_students.csv
+                                </strong>
+
+                                <span>
+                                    10 rows • 6 columns
+                                </span>
+                            </div>
+
+                        </div>
+
+
+                        <button class="primary-button" id="calculateCorrelationBtn">
+                            Calculate Correlation
+                        </button>
+
+                    </div>
+
+
+                    <div class="analysis-status" id="correlationStatus">
+                        Ready for correlation analysis
+                    </div>
+
+                </div>
+
+
+                <!-- Variable Selection -->
+                <div class="page-card">
+
+                    <div class="page-card-header">
+
+                        <div>
+                            <h2>Select Variables</h2>
+
+                            <p>
+                                Choose numerical variables for correlation analysis.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="variable-grid">
+
+                        <label class="variable-option">
+                            <input type="checkbox" value="Age" checked>
+                            <span>Age</span>
+                        </label>
+
+
+                        <label class="variable-option">
+                            <input type="checkbox" value="Study_Hours" checked>
+                            <span>Study Hours</span>
+                        </label>
+
+
+                        <label class="variable-option">
+                            <input type="checkbox" value="Attendance" checked>
+                            <span>Attendance</span>
+                        </label>
+
+
+                        <label class="variable-option">
+                            <input type="checkbox" value="Marks" checked>
+                            <span>Marks</span>
+                        </label>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Correlation Summary -->
+                <div class="correlation-summary-grid">
+
+                    <div class="correlation-summary-card">
+
+                        <span>Strong Positive</span>
+
+                        <strong>2</strong>
+
+                        <small>
+                            Relationships
+                        </small>
+
+                    </div>
+
+
+                    <div class="correlation-summary-card">
+
+                        <span>Moderate</span>
+
+                        <strong>3</strong>
+
+                        <small>
+                            Relationships
+                        </small>
+
+                    </div>
+
+
+                    <div class="correlation-summary-card">
+
+                        <span>Weak</span>
+
+                        <strong>1</strong>
+
+                        <small>
+                            Relationships
+                        </small>
+
+                    </div>
+
+
+                    <div class="correlation-summary-card">
+
+                        <span>Variables</span>
+
+                        <strong>4</strong>
+
+                        <small>
+                            Selected variables
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Correlation Matrix -->
+                <div class="page-card">
+
+                    <div class="page-card-header">
+
+                        <div>
+                            <h2>Correlation Matrix</h2>
+
+                            <p>
+                                Pearson correlation coefficient between variables.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="table-container">
+
+                        <table class="correlation-table">
+
+                            <thead>
+
+                                <tr>
+                                    <th>Variable</th>
+                                    <th>Age</th>
+                                    <th>Study Hours</th>
+                                    <th>Attendance</th>
+                                    <th>Marks</th>
+                                </tr>
+
+                            </thead>
+
+
+                            <tbody>
+
+                                <tr>
+                                    <td><strong>Age</strong></td>
+
+                                    <td class="diagonal">1.00</td>
+                                    <td>0.18</td>
+                                    <td>0.11</td>
+                                    <td>0.09</td>
+                                </tr>
+
+
+                                <tr>
+                                    <td><strong>Study Hours</strong></td>
+
+                                    <td>0.18</td>
+                                    <td class="diagonal">1.00</td>
+                                    <td>0.64</td>
+                                    <td class="positive">0.82</td>
+                                </tr>
+
+
+                                <tr>
+                                    <td><strong>Attendance</strong></td>
+
+                                    <td>0.11</td>
+                                    <td>0.64</td>
+                                    <td class="diagonal">1.00</td>
+                                    <td class="positive">0.71</td>
+                                </tr>
+
+
+                                <tr>
+                                    <td><strong>Marks</strong></td>
+
+                                    <td>0.09</td>
+                                    <td class="positive">0.82</td>
+                                    <td class="positive">0.71</td>
+                                    <td class="diagonal">1.00</td>
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+
+                    <div class="correlation-legend">
+
+                        <div>
+                            <span class="legend-box strong"></span>
+                            Strong Positive
+                        </div>
+
+                        <div>
+                            <span class="legend-box moderate"></span>
+                            Moderate
+                        </div>
+
+                        <div>
+                            <span class="legend-box weak"></span>
+                            Weak
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Relationship Analysis -->
+                <div class="page-card">
+
+                    <div class="page-card-header">
+
+                        <div>
+                            <h2>Relationship Analysis</h2>
+
+                            <p>
+                                Important relationships identified from the dataset.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="relationship-list">
+
+                        <div class="relationship-item">
+
+                            <div class="relationship-info">
+
+                                <strong>
+                                    Study Hours ↔ Marks
+                                </strong>
+
+                                <span>
+                                    Strong positive relationship
+                                </span>
+
+                            </div>
+
+                            <div class="correlation-value positive">
+                                0.82
+                            </div>
+
+                        </div>
+
+
+                        <div class="relationship-item">
+
+                            <div class="relationship-info">
+
+                                <strong>
+                                    Attendance ↔ Marks
+                                </strong>
+
+                                <span>
+                                    Strong positive relationship
+                                </span>
+
+                            </div>
+
+                            <div class="correlation-value positive">
+                                0.71
+                            </div>
+
+                        </div>
+
+
+                        <div class="relationship-item">
+
+                            <div class="relationship-info">
+
+                                <strong>
+                                    Study Hours ↔ Attendance
+                                </strong>
+
+                                <span>
+                                    Moderate positive relationship
+                                </span>
+
+                            </div>
+
+                            <div class="correlation-value">
+                                0.64
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Scatter Plot Placeholder -->
+                <div class="page-card">
+
+                    <div class="page-card-header">
+
+                        <div>
+                            <h2>Scatter Relationship</h2>
+
+                            <p>
+                                Visual representation of the relationship between
+                                two selected variables.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="scatter-placeholder">
+
+                        <div class="scatter-axis-y">
+                            Marks
+                        </div>
+
+
+                        <div class="scatter-area">
+
+                            <div class="scatter-point point-1"></div>
+                            <div class="scatter-point point-2"></div>
+                            <div class="scatter-point point-3"></div>
+                            <div class="scatter-point point-4"></div>
+                            <div class="scatter-point point-5"></div>
+                            <div class="scatter-point point-6"></div>
+                            <div class="scatter-point point-7"></div>
+                            <div class="scatter-point point-8"></div>
+
+                            <div class="trend-line"></div>
+
+                            <span class="x-label">
+                                Study Hours
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Footer -->
+                <footer class="footer">
+
+                    <span>
+                        DataInsight — Data Science Analysis & Visualization System
+                    </span>
+
+                    <span>
+                        Data Science Lab Project
+                    </span>
+
+                </footer>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <script src="../js/app.js"></script>
+    <script src="../js/correlation.js"></script>
+
+</body>
+
+</html>

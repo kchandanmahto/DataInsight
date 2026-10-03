@@ -1,0 +1,449 @@
+.regression-dataset {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.selected-dataset {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.dataset-icon {
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 10px;
+
+    background: #eef2ff;
+    color: #4f46e5;
+
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.selected-dataset strong {
+    display: block;
+    color: #111827;
+    font-size: 15px;
+    margin-bottom: 4px;
+}
+
+.selected-dataset span {
+    color: #64748b;
+    font-size: 13px;
+}
+
+.model-status {
+    padding: 7px 12px;
+
+    border-radius: 20px;
+
+    background: #ecfdf5;
+    color: #15803d;
+
+    font-size: 12px;
+    font-weight: 600;
+}
+
+
+/* ===============================
+   Model Cards
+================================ */
+
+.model-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+
+    margin-top: 18px;
+}
+
+.model-card {
+    position: relative;
+
+    display: flex;
+    align-items: flex-start;
+    gap: 13px;
+
+    padding: 18px;
+
+    border: 1px solid #e5e7eb;
+    border-radius: 11px;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+.model-card:hover {
+    border-color: #c7d2fe;
+    background: #fafaff;
+}
+
+.model-card input {
+    margin-top: 4px;
+    accent-color: #4f46e5;
+}
+
+.model-icon {
+    min-width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 9px;
+
+    background: #eef2ff;
+    color: #4f46e5;
+
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.model-content strong {
+    display: block;
+
+    color: #111827;
+
+    font-size: 14px;
+
+    margin-bottom: 7px;
+}
+
+.model-content span {
+    color: #64748b;
+
+    font-size: 12px;
+
+    line-height: 1.5;
+}
+
+
+/* ===============================
+   Configuration
+================================ */
+
+.configuration-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+
+    margin-top: 18px;
+}
+
+.form-group label {
+    display: block;
+
+    color: #374151;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    margin-bottom: 8px;
+}
+
+.form-group select {
+    width: 100%;
+
+    padding: 11px 12px;
+
+    border: 1px solid #dbe1e8;
+    border-radius: 8px;
+
+    background: #ffffff;
+
+    color: #374151;
+
+    outline: none;
+}
+
+.form-group select:focus {
+    border-color: #6366f1;
+}
+
+.multiple-variables {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+
+    margin: 20px 0;
+}
+
+.multiple-variables label {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+
+    color: #475569;
+
+    font-size: 13px;
+}
+
+.multiple-variables input {
+    accent-color: #4f46e5;
+}
+
+.regression-status {
+    margin-top: 15px;
+
+    padding: 10px 13px;
+
+    border-radius: 8px;
+
+    background: #f8fafc;
+
+    color: #64748b;
+
+    font-size: 13px;
+}
+
+
+/* ===============================
+   Summary
+================================ */
+
+.regression-summary-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+
+    margin: 20px 0;
+}
+
+.regression-summary-card {
+    padding: 20px;
+
+    background: #ffffff;
+
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+}
+
+.regression-summary-card span {
+    display: block;
+
+    color: #64748b;
+
+    font-size: 13px;
+
+    margin-bottom: 9px;
+}
+
+.regression-summary-card strong {
+    display: block;
+
+    color: #111827;
+
+    font-size: 27px;
+
+    margin-bottom: 5px;
+}
+
+.regression-summary-card small {
+    color: #94a3b8;
+
+    font-size: 12px;
+}
+
+
+/* ===============================
+   Results Table
+================================ */
+
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+
+    margin-top: 18px;
+}
+
+.table-container table {
+    width: 100%;
+    min-width: 850px;
+
+    border-collapse: collapse;
+}
+
+.table-container th,
+.table-container td {
+    padding: 13px;
+
+    border-bottom: 1px solid #e5e7eb;
+
+    text-align: left;
+
+    white-space: nowrap;
+}
+
+.table-container th {
+    background: #f8fafc;
+
+    color: #475569;
+
+    font-size: 12px;
+}
+
+.table-container td {
+    color: #64748b;
+
+    font-size: 13px;
+}
+
+.table-container td strong {
+    color: #111827;
+}
+
+.significant {
+    display: inline-block;
+
+    padding: 5px 8px;
+
+    border-radius: 5px;
+
+    background: #ecfdf5;
+    color: #15803d;
+
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.not-significant {
+    display: inline-block;
+
+    padding: 5px 8px;
+
+    border-radius: 5px;
+
+    background: #f8fafc;
+    color: #64748b;
+
+    font-size: 11px;
+    font-weight: 600;
+}
+
+
+/* ===============================
+   Equation
+================================ */
+
+.equation-box {
+    margin-top: 18px;
+
+    padding: 25px;
+
+    border-radius: 10px;
+
+    background: #f8fafc;
+
+    text-align: center;
+}
+
+.equation-label {
+    color: #64748b;
+
+    font-size: 14px;
+
+    margin-right: 8px;
+}
+
+.equation-box strong {
+    color: #111827;
+
+    font-size: 18px;
+}
+
+
+/* ===============================
+   Interpretation
+================================ */
+
+.interpretation-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 16px;
+
+    margin-top: 18px;
+}
+
+.interpretation-item {
+    padding: 18px;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 10px;
+}
+
+.interpretation-item strong {
+    display: block;
+
+    color: #111827;
+
+    font-size: 14px;
+
+    margin-bottom: 8px;
+}
+
+.interpretation-item span {
+    color: #64748b;
+
+    font-size: 12px;
+
+    line-height: 1.6;
+}
+
+
+/* ===============================
+   Responsive
+================================ */
+
+@media (max-width: 1000px) {
+
+    .model-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .regression-summary-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .interpretation-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+@media (max-width: 700px) {
+
+    .regression-dataset {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .configuration-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .regression-summary-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .equation-box {
+        text-align: left;
+    }
+
+    .equation-label {
+        display: block;
+        margin-bottom: 8px;
+    }
+}

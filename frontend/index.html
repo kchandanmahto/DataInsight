@@ -5,138 +5,395 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>DataInsight</title>
+    <title>DataInsight - Dashboard</title>
 
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dashboard.css">
 </head>
 
 <body>
 
-    <header class="header">
-        <div class="container">
-            <h1>DataInsight</h1>
-            <p>Data Science Analysis & Visualization System</p>
-        </div>
-    </header>
+    <div class="app-layout">
 
+        <!-- Sidebar -->
+        <aside class="sidebar">
 
-    <main class="container">
+            <div class="brand">
+                <div class="brand-icon">DI</div>
 
-        <!-- Upload Section -->
-        <section class="card upload-section">
-
-            <h2>Upload Dataset</h2>
-
-            <p class="description">
-                Upload a CSV or Excel dataset to start data analysis.
-            </p>
-
-            <div class="upload-box">
-
-                <input type="file" id="datasetFile" accept=".csv,.xlsx,.xls">
-
-                <button id="analyzeBtn">
-                    Analyze Dataset
-                </button>
-
+                <div>
+                    <h2>DataInsight</h2>
+                    <span>Data Science</span>
+                </div>
             </div>
 
-            <p id="fileName" class="file-name">
-                No file selected
-            </p>
 
-            <p id="statusMessage" class="status"></p>
+            <nav class="sidebar-nav">
 
-        </section>
+                <p class="nav-title">MAIN</p>
+
+                <a href="index.html" class="nav-link active">
+                    <span>⌂</span>
+                    Dashboard
+                </a>
 
 
-        <!-- Dataset Overview -->
-        <section id="overviewSection" class="card hidden">
+                <p class="nav-title">ANALYSIS</p>
 
-            <h2>Dataset Overview</h2>
+                <a href="pages/dataset.html" class="nav-link">
+                    <span>▣</span>
+                    Dataset
+                </a>
 
-            <div class="stats-grid">
+                <a href="pages/cleaning.html" class="nav-link">
+                    <span>♲</span>
+                    Data Cleaning
+                </a>
 
-                <div class="stat-card">
-                    <span>Rows</span>
-                    <strong id="rowsCount">0</strong>
-                </div>
+                <a href="pages/statistics.html" class="nav-link">
+                    <span>∑</span>
+                    Statistics
+                </a>
 
-                <div class="stat-card">
-                    <span>Columns</span>
-                    <strong id="columnsCount">0</strong>
-                </div>
+                <a href="pages/correlation.html" class="nav-link">
+                    <span>⌁</span>
+                    Correlation
+                </a>
 
-                <div class="stat-card">
-                    <span>Duplicate Rows</span>
-                    <strong id="duplicateCount">0</strong>
-                </div>
+                <a href="pages/regression.html" class="nav-link">
+                    <span>↗</span>
+                    Regression
+                </a>
 
-                <div class="stat-card">
-                    <span>Missing Values</span>
-                    <strong id="missingCount">0</strong>
-                </div>
+                <p class="nav-title">VISUALIZATION</p>
 
+                <a href="pages/visualization.html" class="nav-link">
+                    <span>▥</span>
+                    Visualization
+                </a>
+
+                <a href="pages/geographic.html" class="nav-link">
+                    <span>◎</span>
+                    Geographic
+                </a>
+
+            </nav>
+
+
+            <div class="sidebar-footer">
+                <span>DataInsight</span>
+                <small>v1.0.0</small>
             </div>
 
-        </section>
+        </aside>
 
 
-        <!-- Dataset Information -->
-        <section id="infoSection" class="card hidden">
+        <!-- Main Content -->
+        <main class="main-content">
 
-            <h2>Dataset Information</h2>
+            <!-- Header -->
+            <header class="top-header">
 
-            <div class="table-wrapper">
+                <div>
+                    <h1>Dashboard</h1>
 
-                <table>
-
-                    <thead>
-                        <tr>
-                            <th>Column</th>
-                            <th>Data Type</th>
-                            <th>Missing Values</th>
-                        </tr>
-                    </thead>
-
-                    <tbody id="columnTableBody">
-                    </tbody>
-
-                </table>
-
-            </div>
-
-        </section>
+                    <p>
+                        Welcome to DataInsight
+                    </p>
+                </div>
 
 
-        <!-- Dataset Preview -->
-        <section id="previewSection" class="card hidden">
+                <div class="header-status">
 
-            <h2>Dataset Preview</h2>
+                    <span class="status-dot"></span>
 
-            <div class="table-wrapper">
+                    System Online
 
-                <table id="previewTable">
+                </div>
 
-                    <thead id="previewHead"></thead>
-
-                    <tbody id="previewBody"></tbody>
-
-                </table>
-
-            </div>
-
-        </section>
-
-    </main>
+            </header>
 
 
-    <footer>
-        <p>DataInsight © 2026</p>
-    </footer>
+            <!-- Content -->
+            <section class="dashboard-content">
+
+                <!-- Welcome -->
+                <div class="welcome-card">
+
+                    <div>
+
+                        <span class="welcome-label">
+                            DATA SCIENCE PLATFORM
+                        </span>
+
+                        <h2>
+                            Analyze your data
+                            with DataInsight.
+                        </h2>
+
+                        <p>
+                            Upload datasets, perform statistical
+                            analysis, build regression models and
+                            visualize your data.
+                        </p>
+
+                    </div>
+
+
+                    <a href="pages/dataset.html" class="primary-button">
+                        Upload Dataset
+                    </a>
+
+                </div>
+
+
+                <!-- Statistics Cards -->
+                <div class="section-header">
+
+                    <div>
+                        <h2>Overview</h2>
+
+                        <p>
+                            Your current analysis workspace
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="overview-grid">
+
+                    <div class="overview-card">
+
+                        <div class="card-icon">
+                            📁
+                        </div>
+
+                        <div>
+                            <span>Datasets</span>
+                            <strong id="datasetCount">0</strong>
+                        </div>
+
+                    </div>
+
+
+                    <div class="overview-card">
+
+                        <div class="card-icon">
+                            #
+                        </div>
+
+                        <div>
+                            <span>Total Rows</span>
+                            <strong id="rowCount">0</strong>
+                        </div>
+
+                    </div>
+
+
+                    <div class="overview-card">
+
+                        <div class="card-icon">
+                            ▦
+                        </div>
+
+                        <div>
+                            <span>Total Columns</span>
+                            <strong id="columnCount">0</strong>
+                        </div>
+
+                    </div>
+
+
+                    <div class="overview-card">
+
+                        <div class="card-icon">
+                            ✓
+                        </div>
+
+                        <div>
+                            <span>System Status</span>
+                            <strong class="online-text">
+                                Ready
+                            </strong>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Modules -->
+                <div class="section-header module-heading">
+
+                    <div>
+                        <h2>Analysis Modules</h2>
+
+                        <p>
+                            Choose an analysis module
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="module-grid">
+
+                    <a href="pages/dataset.html" class="module-card">
+
+                        <div class="module-icon">
+                            📊
+                        </div>
+
+                        <h3>
+                            Dataset Analysis
+                        </h3>
+
+                        <p>
+                            Upload and explore your
+                            datasets.
+                        </p>
+
+                        <span>
+                            Open Module →
+                        </span>
+
+                    </a>
+
+
+                    <a href="pages/cleaning.html" class="module-card">
+
+                        <div class="module-icon">
+                            🧹
+                        </div>
+
+                        <h3>
+                            Data Cleaning
+                        </h3>
+
+                        <p>
+                            Handle missing values,
+                            duplicates and data issues.
+                        </p>
+
+                        <span>
+                            Open Module →
+                        </span>
+
+                    </a>
+
+
+                    <a href="pages/statistics.html" class="module-card">
+
+                        <div class="module-icon">
+                            ∑
+                        </div>
+
+                        <h3>
+                            Statistics
+                        </h3>
+
+                        <p>
+                            Calculate descriptive
+                            statistical measures.
+                        </p>
+
+                        <span>
+                            Open Module →
+                        </span>
+
+                    </a>
+
+
+                    <a href="pages/correlation.html" class="module-card">
+
+                        <div class="module-icon">
+                            ⛓
+                        </div>
+
+                        <h3>
+                            Correlation
+                        </h3>
+
+                        <p>
+                            Discover relationships
+                            between variables.
+                        </p>
+
+                        <span>
+                            Open Module →
+                        </span>
+
+                    </a>
+
+
+                    <a href="pages/regression.html" class="module-card">
+
+                        <div class="module-icon">
+                            ↗
+                        </div>
+
+                        <h3>
+                            Regression
+                        </h3>
+
+                        <p>
+                            Perform linear, logistic
+                            and multiple regression.
+                        </p>
+
+                        <span>
+                            Open Module →
+                        </span>
+
+                    </a>
+
+
+                    <a href="pages/visualization.html" class="module-card">
+
+                        <div class="module-icon">
+                            📈
+                        </div>
+
+                        <h3>
+                            Visualization
+                        </h3>
+
+                        <p>
+                            Create charts and
+                            statistical visualizations.
+                        </p>
+
+                        <span>
+                            Open Module →
+                        </span>
+
+                    </a>
+
+                </div>
+
+            </section>
+
+
+            <footer class="footer">
+
+                <span>
+                    DataInsight © 2026
+                </span>
+
+                <span>
+                    CSEP701 Data Science Lab
+                </span>
+
+            </footer>
+
+        </main>
+
+    </div>
 
 
     <script src="js/app.js"></script>
+    <script src="js/dashboard.js"></script>
 
 </body>
 

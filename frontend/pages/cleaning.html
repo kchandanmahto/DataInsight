@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>DataInsight - Data Cleaning</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+
+    <link rel="stylesheet" href="../css/cleaning.css">
+</head>
+
+<body>
+
+    <div class="app-layout">
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+
+            <div class="brand">
+
+                <div class="brand-icon">
+                    DI
+                </div>
+
+                <div>
+                    <h2>DataInsight</h2>
+                    <span>Data Science</span>
+                </div>
+
+            </div>
+
+
+            <nav class="sidebar-nav">
+
+                <p class="nav-title">
+                    MAIN
+                </p>
+
+                <a href="../index.html" class="nav-link">
+                    <span>⌂</span>
+                    Dashboard
+                </a>
+
+
+                <p class="nav-title">
+                    ANALYSIS
+                </p>
+
+                <a href="dataset.html" class="nav-link">
+                    <span>▣</span>
+                    Dataset
+                </a>
+
+                <a href="cleaning.html" class="nav-link active">
+                    <span>♲</span>
+                    Data Cleaning
+                </a>
+
+                <a href="statistics.html" class="nav-link">
+                    <span>∑</span>
+                    Statistics
+                </a>
+
+                <a href="correlation.html" class="nav-link">
+                    <span>⌁</span>
+                    Correlation
+                </a>
+
+                <a href="regression.html" class="nav-link">
+                    <span>↗</span>
+                    Regression
+                </a>
+
+
+                <p class="nav-title">
+                    VISUALIZATION
+                </p>
+
+                <a href="visualization.html" class="nav-link">
+                    <span>▥</span>
+                    Visualization
+                </a>
+
+                <a href="geographic.html" class="nav-link">
+                    <span>◎</span>
+                    Geographic
+                </a>
+
+            </nav>
+
+
+            <div class="sidebar-footer">
+
+                <span>
+                    DataInsight
+                </span>
+
+                <small>
+                    v1.0.0
+                </small>
+
+            </div>
+
+        </aside>
+
+
+        <!-- Main -->
+        <main class="main-content">
+
+            <!-- Header -->
+            <header class="top-header">
+
+                <div>
+
+                    <h1>
+                        Data Cleaning
+                    </h1>
+
+                    <p>
+                        Prepare and clean your dataset
+                        before analysis.
+                    </p>
+
+                </div>
+
+
+                <div class="header-status">
+
+                    <span class="status-dot"></span>
+
+                    System Online
+
+                </div>
+
+            </header>
+
+
+            <!-- Content -->
+            <section class="page-content">
+
+
+                <!-- Dataset Selection -->
+                <div class="page-card">
+
+                    <div class="page-card-header">
+
+                        <div>
+
+                            <h2>
+                                Select Dataset
+                            </h2>
+
+                            <p>
+                                Choose a dataset to
+                                inspect and clean.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="clean-dataset-selector">
+
+                        <div class="selected-dataset">
+
+                            <div class="dataset-file-icon">
+                                CSV
+                            </div>
+
+                            <div>
+
+                                <strong>
+                                    datainsight_sample_students.csv
+                                </strong>
+
+                                <span>
+                                    10 rows · 6 columns
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <button class="secondary-button">
+                            Change Dataset
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Data Quality -->
+                <div class="page-card">
+
+                    <div class="page-card-header">
+
+                        <div>
+
+                            <h2>
+                                Data Quality
+                            </h2>
+
+                            <p>
+                                Check the current quality
+                                of your dataset.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="quality-grid">
+
+
+                        <div class="quality-card">
+
+                            <div class="quality-icon">
+                                ✓
+                            </div>
+
+                            <div>
+
+                                <span>
+                                    Missing Values
+                                </span>
+
+                                <strong class="success-value">
+                                    0
+                                </strong>
+
+                                <small>
+                                    No missing values
+                                </small>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="quality-card">
+
+                            <div class="quality-icon">
+                                #
+                            </div>
+
+                            <div>
+
+                                <span>
+                                    Duplicate Rows
+                                </span>
+
+                                <strong>
+                                    0
+                                </strong>
+
+                                <small>
+                                    Duplicate records
+                                </small>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="quality-card">
+
+                            <div class="quality-icon">
+                                T
+                            </div>
+
+                            <div>
+
+                                <span>
+                                    Data Types
+                                </span>
+
+                                <strong>
+                                    6
+                                </strong>
+
+                                <small>
+                                    Columns detected
+                                </small>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="quality-card">
+
+                            <div class="quality-icon">
+                                ✓
+                            </div>
+
+                            <div>
+
+                                <span>
+                                    Data Quality
+                                </span>
+
+                                <strong class="success-value">
+                                    Good
+                                </strong>
+
+                                <small>
+                                    Ready for analysis
+                                </small>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Cleaning Operations -->
+                <div class="page-card">
+
+                    <div class="page-card-header">
+
+                        <div>
+
+                            <h2>
+                                Cleaning Operations
+                            </h2>
+
+                            <p>
+                                Select the operations you
+                                want to perform.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="cleaning-options">
+
+
+                        <!-- Missing Values -->
+                        <div class="cleaning-option">
+
+                            <div class="option-info">
+
+                                <div class="option-icon">
+                                    MV
+                                </div>
+
+                                <div>
+
+                                    <h3>
+                                        Handle Missing Values
+                                    </h3>
+
+                                    <p>
+                                        Fill missing numeric
+                                        values using median
+                                        and categorical values
+                                        using mode.
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                            <label class="switch">
+
+                                <input type="checkbox" id="missingToggle" checked>
+
+                                <span class="slider"></span>
+
+                            </label>
+
+                        </div>
+
+
+                        <!-- Duplicates -->
+                        <div class="cleaning-option">
+
+                            <div class="option-info">
+
+                                <div class="option-icon">
+                                    DR
+                                </div>
+
+                                <div>
+
+                                    <h3>
+                                        Remove Duplicate Rows
+                                    </h3>
+
+                                    <p>
+                                        Automatically detect
+                                        and remove duplicate
+                                        records.
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                            <label class="switch">
+
+                                <input type="checkbox" id="duplicateToggle" checked>
+
+                                <span class="slider"></span>
+
+                            </label>
+
+                        </div>
+
+
+                        <!-- Data Types -->
+                        <div class="cleaning-option">
+
+                            <div class="option-info">
+
+                                <div class="option-icon">
+                                    DT
+                                </div>
+
+                                <div>
+
+                                    <h3>
+                                        Validate Data Types
+                                    </h3>
+
+                                    <p>
+                                        Check and normalize
+                                        column data types.
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                            <label class="switch">
+
+                                <input type="checkbox" id="datatypeToggle" checked>
+
+                                <span class="slider"></span>
+
+                            </label>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="clean-actions">
+
+                        <button class="primary-button" id="cleanBtn">
+                            Clean Dataset
+                        </button>
+
+                        <button class="secondary-button" id="resetBtn">
+                            Reset
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Cleaning Report -->
+                <div class="page-card">
+
+                    <div class="page-card-header">
+
+                        <div>
+
+                            <h2>
+                                Cleaning Report
+                            </h2>
+
+                            <p>
+                                Summary of changes made
+                                to the dataset.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="report-grid">
+
+
+                        <div class="report-item">
+
+                            <span>
+                                Original Rows
+                            </span>
+
+                            <strong>
+                                10
+                            </strong>
+
+                        </div>
+
+
+                        <div class="report-item">
+
+                            <span>
+                                Rows Removed
+                            </span>
+
+                            <strong>
+                                0
+                            </strong>
+
+                        </div>
+
+
+                        <div class="report-item">
+
+                            <span>
+                                Missing Values Fixed
+                            </span>
+
+                            <strong>
+                                0
+                            </strong>
+
+                        </div>
+
+
+                        <div class="report-item">
+
+                            <span>
+                                Final Rows
+                            </span>
+
+                            <strong>
+                                10
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="download-area">
+
+                        <p>
+                            Your cleaned dataset will
+                            be available here.
+                        </p>
+
+                        <button class="secondary-button" disabled>
+                            Download Cleaned Dataset
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+            </section>
+
+
+            <footer class="footer">
+
+                <span>
+                    DataInsight © 2026
+                </span>
+
+                <span>
+                    CSEP701 Data Science Lab
+                </span>
+
+            </footer>
+
+        </main>
+
+    </div>
+
+
+    <script src="../js/app.js"></script>
+    <script src="../js/cleaning.js"></script>
+
+</body>
+
+</html>

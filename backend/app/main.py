@@ -2,6 +2,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from app.routes.dataset import router as dataset_router
+from app.routes.statistics import router as statistics_router
 
 
 app = FastAPI(
@@ -21,13 +22,17 @@ app.add_middleware(
 
 
 app.include_router(dataset_router)
+app.include_router(statistics_router)
 
 
 @app.get("/")
 def root():
     return {
         "project": "DataInsight",
-        "message": "Data Science Analysis & Visualization System",
+        "message": (
+            "Data Science Analysis "
+            "& Visualization System"
+        ),
         "status": "running",
     }
 

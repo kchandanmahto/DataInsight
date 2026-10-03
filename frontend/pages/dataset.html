@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>DataInsight - Dataset</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/dataset.css">
+</head>
+
+<body>
+
+    <div class="app-layout">
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+
+            <div class="brand">
+                <div class="brand-icon">DI</div>
+
+                <div>
+                    <h2>DataInsight</h2>
+                    <span>Data Science</span>
+                </div>
+            </div>
+
+
+            <nav class="sidebar-nav">
+
+                <p class="nav-title">MAIN</p>
+
+                <a href="../index.html" class="nav-link">
+                    <span>⌂</span>
+                    Dashboard
+                </a>
+
+
+                <p class="nav-title">ANALYSIS</p>
+
+                <a href="dataset.html" class="nav-link active">
+                    <span>▣</span>
+                    Dataset
+                </a>
+
+                <a href="cleaning.html" class="nav-link">
+                    <span>♲</span>
+                    Data Cleaning
+                </a>
+
+                <a href="statistics.html" class="nav-link">
+                    <span>∑</span>
+                    Statistics
+                </a>
+
+                <a href="correlation.html" class="nav-link">
+                    <span>⌁</span>
+                    Correlation
+                </a>
+
+                <a href="regression.html" class="nav-link">
+                    <span>↗</span>
+                    Regression
+                </a>
+
+
+                <p class="nav-title">VISUALIZATION</p>
+
+                <a href="visualization.html" class="nav-link">
+                    <span>▥</span>
+                    Visualization
+                </a>
+
+                <a href="geographic.html" class="nav-link">
+                    <span>◎</span>
+                    Geographic
+                </a>
+
+            </nav>
+
+
+            <div class="sidebar-footer">
+                <span>DataInsight</span>
+                <small>v1.0.0</small>
+            </div>
+
+        </aside>
+
+
+        <!-- Main -->
+        <main class="main-content">
+
+            <!-- Header -->
+            <header class="top-header">
+
+                <div>
+                    <h1>Dataset Analysis</h1>
+
+                    <p>
+                        Upload and explore your dataset
+                    </p>
+                </div>
+
+
+                <div class="header-status">
+
+                    <span class="status-dot"></span>
+
+                    System Online
+
+                </div>
+
+            </header>
+
+
+            <!-- Content -->
+            <section class="page-content">
+
+
+                <!-- Upload Card -->
+                <div class="page-card upload-card">
+
+                    <div class="page-card-header">
+
+                        <div>
+
+                            <h2>
+                                Upload Dataset
+                            </h2>
+
+                            <p>
+                                Upload a CSV or Excel file
+                                to begin analysis.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="dataset-upload-area">
+
+                        <div class="upload-icon">
+                            ↑
+                        </div>
+
+                        <h3>
+                            Choose your dataset
+                        </h3>
+
+                        <p>
+                            Supported formats:
+                            CSV, XLSX, XLS
+                        </p>
+
+
+                        <input type="file" id="datasetFile" accept=".csv,.xlsx,.xls" hidden>
+
+
+                        <label for="datasetFile" class="upload-button">
+                            Choose File
+                        </label>
+
+
+                        <p id="selectedFile" class="selected-file">
+                            No file selected
+                        </p>
+
+                    </div>
+
+
+                    <div class="upload-actions">
+
+                        <button id="analyzeBtn" class="primary-button">
+                            Analyze Dataset
+                        </button>
+
+                        <span id="uploadStatus" class="upload-status"></span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Overview -->
+                <div id="datasetOverview" class="page-card hidden">
+
+                    <div class="page-card-header">
+
+                        <div>
+
+                            <h2>
+                                Dataset Overview
+                            </h2>
+
+                            <p>
+                                Basic information about
+                                your dataset.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="dataset-stats-grid">
+
+
+                        <div class="dataset-stat">
+
+                            <span>
+                                Rows
+                            </span>
+
+                            <strong id="rowsCount">
+                                0
+                            </strong>
+
+                        </div>
+
+
+                        <div class="dataset-stat">
+
+                            <span>
+                                Columns
+                            </span>
+
+                            <strong id="columnsCount">
+                                0
+                            </strong>
+
+                        </div>
+
+
+                        <div class="dataset-stat">
+
+                            <span>
+                                Missing Values
+                            </span>
+
+                            <strong id="missingCount">
+                                0
+                            </strong>
+
+                        </div>
+
+
+                        <div class="dataset-stat">
+
+                            <span>
+                                Duplicate Rows
+                            </span>
+
+                            <strong id="duplicateCount">
+                                0
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Column Information -->
+                <div id="columnInfo" class="page-card hidden">
+
+                    <div class="page-card-header">
+
+                        <div>
+
+                            <h2>
+                                Column Information
+                            </h2>
+
+                            <p>
+                                Data types and missing
+                                values for each column.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="table-container">
+
+                        <table>
+
+                            <thead>
+
+                                <tr>
+
+                                    <th>
+                                        Column
+                                    </th>
+
+                                    <th>
+                                        Data Type
+                                    </th>
+
+                                    <th>
+                                        Missing Values
+                                    </th>
+
+                                </tr>
+
+                            </thead>
+
+
+                            <tbody id="columnTableBody">
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Preview -->
+                <div id="datasetPreview" class="page-card hidden">
+
+                    <div class="page-card-header">
+
+                        <div>
+
+                            <h2>
+                                Dataset Preview
+                            </h2>
+
+                            <p>
+                                First 10 rows of your
+                                dataset.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="table-container">
+
+                        <table id="previewTable">
+
+                            <thead id="previewHead">
+                            </thead>
+
+                            <tbody id="previewBody">
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </div>
+
+
+            </section>
+
+
+            <footer class="footer">
+
+                <span>
+                    DataInsight © 2026
+                </span>
+
+                <span>
+                    CSEP701 Data Science Lab
+                </span>
+
+            </footer>
+
+        </main>
+
+    </div>
+
+
+    <script src="../js/app.js"></script>
+    <script src="../js/dataset.js"></script>
+
+</body>
+
+</html>
